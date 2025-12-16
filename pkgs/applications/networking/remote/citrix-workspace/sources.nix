@@ -103,6 +103,17 @@ let
       x86hash = "";
       x64suffix = "44";
       x86suffix = "";
+      homepage = "https://www.citrix.com/downloads/workspace-app/legacy-workspace-app-for-linux/workspace-app-for-linux-latest14.html";
+    };
+
+    "25.08.10" = {
+      major = "25";
+      minor = "08";
+      patch = "10";
+      x64hash = "0fwqsxggswms40b5k8saxpm1ghkxppl27x19w8jcslq1f0i1fwqx";
+      x86hash = "";
+      x64suffix = "111";
+      x86suffix = "";
       homepage = "https://www.citrix.com/downloads/workspace-app/linux/workspace-app-for-linux-latest.html";
     };
   };
@@ -116,6 +127,13 @@ let
     "23.02.0"
     "23.07.0"
     "23.09.0"
+    "23.11.0"
+    "24.02.0"
+    "24.05.0"
+    "24.08.0"
+    "24.11.0"
+    "25.03.0"
+    "25.05.0"
   ];
 in
 {

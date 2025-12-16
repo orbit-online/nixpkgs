@@ -10,7 +10,6 @@
   cacert,
   cairo,
   dconf,
-  fetchurl,
   file,
   fontconfig,
   freetype,
@@ -54,7 +53,6 @@
   symlinkJoin,
   systemd,
   tzdata,
-  # webkitgtk_4_0,
   which,
   xorg,
   zlib,
@@ -173,7 +171,6 @@ stdenv.mkDerivation rec {
     speex
     stdenv.cc.cc
     (lib.getLib systemd)
-    # webkitgtk_4_0
     xorg.libXScrnSaver
     xorg.libXaw
     xorg.libXmu
@@ -313,8 +310,10 @@ stdenv.mkDerivation rec {
   '';
 
   meta = {
-    # webkitgtk_4_0 was removed
-    broken = true;
+    # webkitgtk_4_0 was removed because libsoup_2_4 is insecure.
+    # Ubuntu did so as well in 24.04, breaking Citrix Workspace.
+    # Citrix "fixed" that by including webkit2gtk-4.0 directly.
+    insecure = true;
     license = lib.licenses.unfree;
     description = "Citrix Workspace";
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
